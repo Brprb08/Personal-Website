@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+.modal{
+    background-color: #efe2ba;
+    display: flex;
+    justify-content: center;
+}
+
+.aph{
+    display: flex;
+    font-size: 5em;
+    font-family: Consolas, monaco, monospace;
+    justify-content: center;
+    color: #d79922;
+    transition: .05s;
+    cursor:default;
+}
+
+.aph:hover{
+    color:rgb(43, 43, 43)
+}
+
