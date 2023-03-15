@@ -32,8 +32,9 @@ body{
     height: 100%;
     width: 50%;
     justify-content: center;
-    background-image: url("../img/Computer.webp");
-    background-repeat:no-repeat;
+    /* background-image: url("../img/Computer.webp");
+    background-repeat:no-repeat; */
+    background-color: #ec4141;
     background-size: cover;
     font-family: Consolas, monaco, monospace;
     color: white;
@@ -99,8 +100,9 @@ body{
     width: 50%;
     justify-content: center;
     text-align: center;
-    background-image: url("../img/web.png");
-    background-repeat:no-repeat;
+    /* background-image: url("../img/web.png");
+    background-repeat:no-repeat; */
+    background-color: #9911AA;
     background-size: cover;
     color: white;
     font-family: Consolas, monaco, monospace;
@@ -160,8 +162,9 @@ body{
     height: 100%;
     justify-content: center;
     color: white;
-    background-image: url("../img/bits.jpg");
-    background-repeat:no-repeat;
+    /* background-image: url("../img/bits.jpg");
+    background-repeat:no-repeat; */
+    background-color: 	#5fbb4e;
     background-size: cover;
     font-family: Consolas, monaco, monospace;
 }
@@ -210,8 +213,9 @@ body{
     font-size: 2em;
     justify-content: center;
     color: white;
-    background-image: url("../img/darkFolderFullSnip.png");
-    background-repeat:no-repeat;
+    /* background-image: url("../img/darkFolderFullSnip.png");
+    background-repeat:no-repeat; */
+    background-color: #ef7135;
     background-size: cover;
     font-family: Consolas, monaco, monospace;
 }
