@@ -3,13 +3,8 @@
 }
 
 body{
-    margin: 0;
-}
-
-.modal{
     background-color: #efe2ba;
-    display: flex;
-    justify-content: center;
+    margin: 0;
 }
 
 .aph{
@@ -17,7 +12,7 @@ body{
     font-size: 5em;
     font-family: Consolas, monaco, monospace;
     justify-content: center;
-    color: #d79922;
+    color: #f13c20;
     transition: .05s;
     cursor:default;
 }
@@ -26,3 +21,127 @@ body{
     color:rgb(43, 43, 43)
 }
 
+.hero-section h2 {
+    color: #efe2ba;
+}
+
+
+header, section, footer {
+    padding: 20px;
+    margin: 10px;
+}
+
+.aboutContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; /* Evenly spaces children with space around them */
+    padding: 20px;
+}
+
+.aboutCard {
+    background-color: white;  /* White background for cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    border-radius: 10px;  /* Rounded corners */
+    margin: 10px;
+    padding: 10px;
+    flex-grow: 1;  /* Allows the card to grow to fill the space */
+    flex-basis: calc(33% - 20px);  /* Initially three cards per row */
+    text-align: left;
+}
+
+.aboutCard h2 {
+    text-align: center;
+    color: #f13c20;
+}
+
+.aboutCard p, .aboutCard ul li {
+    padding-left: 2em;
+    color: #efe2ba;
+}
+
+/* Hero section styling */
+.hero-section {
+    /* background: url('../img/web.png') no-repeat center center/cover; */
+    background-color: #333333;
+    color: white;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 10px;
+}
+
+.hero-section-name {
+    display: flex;
+    text-align: center;
+}
+
+/* Bio section styling */
+.bio {
+    background: #333333;
+    color: black;
+    padding: 20px;
+}
+
+.skills-icons img {
+    width: 50px; /* Example size, adjust as necessary */
+    margin-right: 10px;
+}
+
+/* Sports journey styling */
+.sports-journey {
+    background: #333333;
+    color: black;
+    padding: 20px;
+}
+
+.sports-journey ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sports-journey li {
+    margin-bottom: 10px;
+}
+
+/* Tech interests styling */
+.tech-interests {
+    background: #333333;
+    color: #333;
+    padding: 20px;
+}
+
+/* Contact links footer styling */
+.contact-links {
+    background: #333333;
+    text-align: center;
+    padding: 20px;
+    color: #efe2ba;
+}
+
+.contact-links h2 {
+    color: #f13c20;
+}
+
+/* Responsive Design Considerations */
+@media (max-width: 768px) {
+    header, section, footer {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .aboutCard {
+        flex-basis: calc(50% - 20px);  /* Two cards per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;  /* Stacks the cards vertically */
+        align-items: center;  /* Aligns cards centrally */
+    }
+
+    .aboutCard {
+        flex-basis: 90%;  /* Almost full width for smaller screens */
+    }
+}

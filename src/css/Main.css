@@ -5,6 +5,7 @@
 body{
     margin: 0;
     background-color: black;
+    color: #333333;
 }
 
 
@@ -19,40 +20,43 @@ body{
     height: 60rem;
 }
 
-.top-info{
-    display: flex;
+.contain-main{
+    display: grid;
+    overflow: visible;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(2, 1fr); /* Creates two columns */
+    grid-template-rows: repeat(2, 1fr); /* Creates two rows */
 }
 
-
-
-.top-left{
+.mainCard {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     position: relative;
     display: grid;
     font-size: 2em;
-    height: 100%;
-    width: 50%;
     justify-content: center;
-    /* background-image: url("../img/Computer.webp");
-    background-repeat:no-repeat; */
-    background-color: #ec4141;
+    border: 1px solid black;
+    background-color: #efe2ba;
     background-size: cover;
     font-family: Consolas, monaco, monospace;
-    color: white;
+    color: #f13c20;
     isolation: isolate;
     opacity: 1;
+    transition: box-shadow .3s ease;
 }
 
-.view-about:hover .top-left::after{
-    content: '';
-    position: absolute;
-    z-index: -1;
-    inset: 0;
-    background: black;
-    opacity: .5;
+.mainCard:hover {
+    box-shadow: inset 0px 0px 50px rgba(0,0,0,0.6);
 }
 
-.about-info{
-    color: white;
+.card-info{
+    color: #f13c20;
     display: flex;
     height: 100%;
     align-items: center;
@@ -65,49 +69,27 @@ body{
     height: 100%;
 }
 
-.view-about{
+.view-card-btn{
     display: flex;
     height: 20%;
     padding: 50px 70px 50px 70px;
     align-items: center;
     text-align: center;
     font-size: 1em;
-    color: white  ;
+    color: #f13c20  ;
     font-family: Consolas, monaco, monospace;
-    border: 2px solid white;
+    border: 2px solid #f13c20;
     border-radius: 40px;
     background: transparent;
-    transition: .1s;
+    transition: .3s ease;
 }
 
-.view-about:hover{
-    background-color: #d79922;
+.view-card-btn:hover{
+    background-color: #333333;
     cursor: pointer;
 }
 
 
-.exp-info{
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
-.top-right{
-    position: relative;
-    display: grid;
-    font-size: 2em;
-    height: 100%;
-    width: 50%;
-    justify-content: center;
-    text-align: center;
-    /* background-image: url("../img/web.png");
-    background-repeat:no-repeat; */
-    background-color: #9911AA;
-    background-size: cover;
-    color: white;
-    font-family: Consolas, monaco, monospace;
-    
-}
 
 .tr-btn{
     display: flex;
@@ -117,56 +99,8 @@ body{
 }
 
 
-.view-exp{
-    display: flex;
-    height: 20%;
-    padding: 50px 70px 50px 70px;
-    align-items: center;
-    text-align: center;
-    font-size: 1em;
-    font-family: Consolas, monaco, monospace;
-    border: 2px solid white;
-    border-radius: 40px;
-    background: transparent; 
-    color: white;
-    text-decoration: none;
-    transition: .1s;
-}
-
-
-
-.view-exp:hover{
-    background-color: #f13c20;
-    cursor: pointer;
-}
-
-.skills-info{
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
 .bottom-info{
     display: flex;
-}
-
-
-
-
-.bottom-left{
-    position: relative;
-    display: grid;
-    font-size: 2em;
-    width: 50%;
-    height: 100%;
-    justify-content: center;
-    color: white;
-    /* background-image: url("../img/bits.jpg");
-    background-repeat:no-repeat; */
-    background-color: 	#5fbb4e;
-    background-size: cover;
-    font-family: Consolas, monaco, monospace;
 }
 
 
@@ -177,48 +111,6 @@ body{
     height: 100%;
 }
 
-.view-skills{
-    display: flex;
-    height: 20%;
-    padding: 50px 70px 50px 70px;
-    align-items: center;
-    text-align: center;
-    font-size: 1em;
-    font-family: Consolas, monaco, monospace;
-    border: 2px solid white;
-    border-radius: 40px;
-    background: transparent;
-    transition: .1s;
-    color: white;
-}
-
-.view-skills:hover{
-    background-color: #4056a1;
-    cursor: pointer;
-}
-
-.resume-info{
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.bottom-right{
-    position: relative;
-    display: grid;
-    width: 50%;
-    height: 100%;
-    font-size: 2em;
-    justify-content: center;
-    color: white;
-    /* background-image: url("../img/darkFolderFullSnip.png");
-    background-repeat:no-repeat; */
-    background-color: #ef7135;
-    background-size: cover;
-    font-family: Consolas, monaco, monospace;
-}
 
 .br-btn{
     display: flex;
@@ -227,82 +119,20 @@ body{
     height: 100%;
 }
 
-.view-resume{
-    display: flex;
-    height: 20%;
-    padding: 50px 70px 50px 70px;
-    align-items: center;
-    text-align: center;
-    font-size: 1em;
-    font-family: Consolas, monaco, monospace;
-    border: 2px solid white;
-    border-radius: 40px;
-    background: transparent;
-    transition: .1s;
-    color: white;
-}
-
-.view-resume:hover{
-    background-color: 	#8A2BE2;
-    color: black;
-    cursor: pointer;
-}
-
-.ah{
+.letter{
     display: flex;
     font-size: 2em;
     font-family: Consolas, monaco, monospace;
     justify-content: center;
-    color: white;
+    color: #f13c20;
     transition: .05s;
     cursor:default;
 }
 
-.ah:hover{
-    color:#d79922;
+.letter:hover{
+    color:#333333;
 }
 
-.eh{
-    display: flex;
-    font-size: 2em;
-    font-family: Consolas, monaco, monospace;
-    justify-content: center;
-    color: white;
-    transition: .05s;
-    cursor:default;
-}
-
-.eh:hover{
-    color:#f13c20;
-}
-
-.skh{
-    display: flex;
-    font-size: 2em;
-    font-family: Consolas, monaco, monospace;
-    justify-content: center;
-    color: white;
-    transition: .05s;
-    cursor:default;
-}
-
-.skh:hover{
-    color:#4056a1;
-}
-
-.rh{
-    display: flex;
-    font-size: 2em;
-    font-family: Consolas, monaco, monospace;
-    justify-content: center;
-    color: white;
-    transition: .05s;
-    cursor:default;
-}
-
-.rh:hover{
-    color:	#8A2BE2;
-}
 
 @media all and (max-width: 800px) {
     .top-info{
@@ -331,4 +161,4 @@ body{
         width: 100%;
     }
     
-}
+} 
