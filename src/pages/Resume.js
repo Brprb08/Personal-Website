@@ -1,8 +1,13 @@
-import React, {useState} from 'react'
-import {Document, Page} from 'react-pdf/dist/esm/entry.webpack'
-import pdfFile from '../documents/BPelto.pdf'
+import React, {useState, useEffect} from 'react'
+import {Document, Page, pdfjs} from 'react-pdf'
+// import pdfFile from '../../public/BPelto.pdf'
+// pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
-export default function Resume() {
+
+ export  default function Resume() {
+    // const pdfjs = await import('pdfjs-dist/build/pdf');
+    // const pdfjsWorker = await import('pdfjs-dist/build/pdf.worker.entry');
+    // pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
     const [numPages, setNumPages] = useState(0);
     const [pageNumber, setPageNumber] = useState(1);
@@ -37,6 +42,17 @@ export default function Resume() {
         },1000);
     }
 
+    useEffect(() => {
+      onDocumentLoadSuccess(2);
+      // Set a timeout to simulate loading time
+      const timer = setTimeout(() => {
+        setLoading(false);
+      }, 1000); // Adjust time as needed
+      
+      // Clear the timeout if the component unmounts
+      return () => clearTimeout(timer);
+    }, []);
+
     return ( 
  
 <div className='res-wrap'>
@@ -51,70 +67,32 @@ export default function Resume() {
     </div>
   </div>
 
-  <div className='pdf-wrapper' style={{display: loading ? 'none' : 'flex'}}>
-    <div className='pdf-doc'>
-      <Document
-        file={pdfFile}
-        onLoadSuccess={onDocumentLoadSuccess}
-      >
-        <Page pageNumber={pageNumber} />
-      </Document>
+  <div className='page-wrapper' style={{display: loading ? 'none' : 'grid'}}>
+    <div className='resume-page-header-wrapper'>
+      <h1 className="resume-header"> 
+        <span className="rh">C</span>
+        <span className="rh">u</span>
+        <span className="rh">r</span>
+        <span className="rh">r</span>
+        <span className="rh">e</span>
+        <span className="rh">n</span>
+        <span className="rh">t</span>
+        &nbsp;
+        <span className="rh">R</span>
+        <span className="rh">e</span>
+        <span className="rh">s</span>
+        <span className="rh">u</span>
+        <span className="rh">m</span>
+        <span className="rh">e</span>
+      </h1>
     </div>
-
-    <div className='right-side-res'>
-      <div className='res-info'>
-        <h1 className="info-res"> 
-          <span className="reh">C</span>
-          <span className="reh">u</span>
-          <span className="reh">r</span>
-          <span className="reh">r</span>
-          <span className="reh">e</span>
-          <span className="reh">n</span>
-          <span className="reh">t</span>
-          &nbsp;
-          <span className="reh">R</span>
-          <span className="reh">e</span>
-          <span className="reh">s</span>
-          <span className="reh">u</span>
-          <span className="reh">m</span>
-          <span className="reh">e</span>
-        </h1>
-      </div>
-
-      <div className="page-change">
-        <p className='page-number'>
-          Page {pageNumber || (numPages ? 1 : "--")} of {numPages || "--"}
-        </p>
-        <div className='page-btn'>
-            <div className='pdf-btn-wrap'>
-                <button 
-            type="button" 
-            disabled={pageNumber <= 1} 
-            onClick={previousPage}
-            className="pdf-btn"
-          > 
-            Previous 
-          </button>
-            </div>
-          <div className='pdf-btn1-wrap'>
-            <button
-            type="button"
-            disabled={pageNumber >= numPages}
-            onClick={nextPage}
-            className="pdf-btn1"
-          >
-            Next
-          </button>
-          </div>
-          
-        </div>
-      </div>
-
-      <div className='download-res'>
-        <a href={pdfFile} download="Brendan-Pelto-Resume" target='_blank' style={{textDecoration: 'none'}}>
-          <button className='download-btn'>Download Resume</button>
-        </a>
-      </div>
+    <div className='pdf-doc-wrapper'>
+      <iframe
+        src="/BPelto.pdf"
+        width="100%"
+        height="100%"
+        style={{ border: 'none', display: 'block', width: '100%', height: '100%' }}
+      />
     </div>
   </div>
 </div>
