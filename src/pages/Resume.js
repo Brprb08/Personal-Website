@@ -88,7 +88,7 @@ import {Document, Page, pdfjs} from 'react-pdf'
     </div>
     <div className='pdf-doc-wrapper'>
       <iframe
-        src="/BPelto.pdf"
+        src="/Personal-Website/BPelto.pdf"
         width="100%"
         height="100%"
         style={{ border: 'none', display: 'block', width: '100%', height: '100%' }}
